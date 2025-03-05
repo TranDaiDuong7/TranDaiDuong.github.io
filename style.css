@@ -72,15 +72,14 @@ nav ul li a {
 
 /* Cập nhật ảnh avatar nhỏ gọn và bo tròn */
 .preview-avatar {
-    display: block;
-    width: 150px; /* Điều chỉnh kích thước phù hợp */
-    height: 150px;
-    object-fit: cover; /* Giữ tỉ lệ ảnh, cắt nếu cần */
-    border-radius: 50%; /* Làm tròn ảnh */
-    margin: 20px auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng cho đẹp */
-    border: 3px solid white; /* Viền trắng giúp nổi bật */
+    display: none;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 footer {
     background: #222;
