@@ -3,59 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Chuyên Nghiệp</title>
+    <title>CV Cá Nhân - Trần Đại Dương</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Chào mừng đến với Website của tôi</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="cv-container">
+        <div class="cv-header">
+            <div class="avatar-wrapper">
+                <img id="avatarImage" src="avatar.jpg" alt="Avatar">
+                <input type="file" id="avatarInput" accept="image/*">
+            </div>
+            <h1>Trần Đại Dương</h1>
+            <p class="job-title">Lập Trình Viên Web</p>
+        </div>
 
-    <section class="hero">
-        <h2>Giải pháp công nghệ hàng đầu</h2>
-        <p>Chúng tôi cung cấp dịch vụ chất lượng cao cho doanh nghiệp của bạn.</p>
-        <a href="#" class="btn">Tìm hiểu thêm</a>
-    </section>
+        <div class="cv-content">
+            <section class="cv-section">
+                <h2>Thông Tin Cá Nhân</h2>
+                <ul>
+                    <li><strong>Email:</strong> trandaiduong1123@gmail.com</li>
+                    <li><strong>Điện thoại:</strong> 0987 654 321</li>
+                    <li><strong>Địa chỉ:</strong> Tp.Thủ Đức, Việt Nam</li>
+                    <li><strong>Website:</strong> www.daiduong.dev</li>
+                </ul>
+            </section>
 
-    <section class="about">
-        <h2>Về tôi</h2>
-        <p><strong>Họ tên:</strong> Trần Đại Dương</p>
-        <p><strong>MSSV:</strong> 2180606110</p>
-        <p>Tôi là một lập trình viên đam mê công nghệ và luôn sẵn sàng học hỏi những điều mới.</p>
-    </section>
+            <section class="cv-section">
+                <h2>Kỹ Năng</h2>
+                <ul>
+                    <li>- Lập trình HTML, CSS, JavaScript</li>
+                    <li>- Framework: ReactJS, VueJS</li>
+                    <li>- Backend: NodeJS, PHP, MySQL</li>
+                    
+                </ul>
+            </section>
 
-    <div class="info">
-        <span class="label">Chọn ảnh của bạn:</span>
-        <input type="file" accept="image/*" onchange="previewImage(event)">
-        <img id="imagePreview" alt="Hình ảnh cá nhân" class="preview-avatar">
+            <section class="cv-section">
+                <h2>Kinh Nghiệm Làm Việc</h2>
+                <p><strong>Sinh viên năm 4 trường đại học Công Nghệ</strong></p>
+                <p>Tháng 9/2021 - Hiện tại</p>
+                <ul>
+                    <li>- Làm đồ án cở sở, chuyên ngành.</li>
+                    <li>- Hoàn thành các khóa học mà trường đưa ra.</li>
+                    <li>- Hợp tác với team thiết kế UI/UX để cải thiện trải nghiệm người dùng.</li>
+                </ul>
+            </section>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Website Chuyên Nghiệp. All rights reserved.</p>
+        <p>&copy; 2025 - Thiết kế bởi Trần Đại Dương</p>
     </footer>
 
     <script>
-        function previewImage(event) {
-            const input = event.target;
-            if (input.files && input.files[0]) {
+        document.getElementById("avatarInput").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
                 const reader = new FileReader();
-                reader.onload = function (e) {
-                    const imagePreview = document.getElementById('imagePreview');
-                    imagePreview.src = e.target.result;
-                    imagePreview.style.display = 'block';
+                reader.onload = function(e) {
+                    document.getElementById("avatarImage").src = e.target.result;
                 };
-                reader.readAsDataURL(input.files[0]);
+                reader.readAsDataURL(file);
             }
-        }
+        });
     </script>
-    
 </body>
 </html>
